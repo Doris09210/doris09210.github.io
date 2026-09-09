@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Interface-mediated feedback dataset pipeline</title>
+  <desc id="desc">Three readable stages connect AI output, structured human review, and traceable data for model adaptation. All labels are horizontal.</desc>
+  <defs>
+    <marker id="blue-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4f78d5"/></marker>
+    <marker id="gold-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#d89726"/></marker>
+    <marker id="green-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#568f70"/></marker>
+    <style>
+      .k{font:700 18px 'Segoe UI',Arial,sans-serif;fill:#4f78d5;letter-spacing:1.5px}.t{font:700 39px 'Segoe UI',Arial,sans-serif;fill:#11312a}.s{font:500 20px 'Segoe UI',Arial,sans-serif;fill:#66736e}.h{font:700 24px 'Segoe UI',Arial,sans-serif}.n{font:600 21px 'Segoe UI',Arial,sans-serif;fill:#19342e;text-anchor:middle}.blue{fill:#e9f0ff;stroke:#4f78d5;stroke-width:2.5}.gold{fill:#fff2d8;stroke:#d89726;stroke-width:2.5}.green{fill:#eaf5e6;stroke:#568f70;stroke-width:2.5}.item{fill:#fff;stroke:#c8cfcb;stroke-width:1.7}.ab{fill:none;stroke:#4f78d5;stroke-width:3;marker-end:url(#blue-arrow)}.ag{fill:none;stroke:#d89726;stroke-width:3;marker-end:url(#gold-arrow)}.ar{fill:none;stroke:#568f70;stroke-width:3;marker-end:url(#green-arrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="#fbfaf5"/>
+  <text class="k" x="80" y="68">STUDY 3 / DATA CONSTRUCTION</text>
+  <text class="t" x="80" y="122">Interface-Mediated Feedback Dataset Pipeline</text>
+  <text class="s" x="80" y="160">Candidate generation, structured review, and model adaptation remain connected through traceable records.</text>
+
+  <rect class="blue" x="80" y="220" width="420" height="530" rx="28"/>
+  <text x="120" y="274" font-family="Segoe UI,Arial" font-size="25" font-weight="700" fill="#4f78d5">01 / AI OUTPUT</text>
+  <rect class="item" x="125" y="330" width="330" height="82" rx="17"/><text class="n" x="290" y="380">User Requirement</text>
+  <path class="ab" d="M290 412 V462"/>
+  <rect class="item" x="125" y="462" width="330" height="82" rx="17"/><text class="n" x="290" y="512">SMM-Supported Prompt</text>
+  <path class="ab" d="M290 544 V594"/>
+  <rect class="item" x="125" y="594" width="330" height="82" rx="17"/><text class="n" x="290" y="644">Candidate A / B</text>
+
+  <rect class="gold" x="590" y="220" width="420" height="530" rx="28"/>
+  <text x="630" y="274" font-family="Segoe UI,Arial" font-size="25" font-weight="700" fill="#d89726">02 / HUMAN REVIEW</text>
+  <rect class="item" x="635" y="330" width="330" height="82" rx="17"/><text class="n" x="800" y="380">Preference Choice</text>
+  <path class="ag" d="M800 412 V462"/>
+  <rect class="item" x="635" y="462" width="330" height="82" rx="17"/><text class="n" x="800" y="512">Structured Labels</text>
+  <path class="ag" d="M800 544 V594"/>
+  <rect class="item" x="635" y="594" width="330" height="82" rx="17"/><text class="n" x="800" y="644">Direct Text Revision</text>
+
+  <rect class="green" x="1100" y="220" width="420" height="530" rx="28"/>
+  <text x="1140" y="274" font-family="Segoe UI,Arial" font-size="25" font-weight="700" fill="#568f70">03 / DATA AND MODEL</text>
+  <rect class="item" x="1145" y="330" width="330" height="82" rx="17"/><text class="n" x="1310" y="380">Traceable Target</text>
+  <path class="ar" d="M1310 412 V462"/>
+  <rect class="item" x="1145" y="462" width="330" height="82" rx="17"/><text class="n" x="1310" y="512">Aligned Dataset</text>
+  <path class="ar" d="M1310 544 V594"/>
+  <rect class="item" x="1145" y="594" width="330" height="82" rx="17"/><text class="n" x="1310" y="644">LoRA Adaptation</text>
+
+  <path class="ag" d="M455 635 H545 V371 H635"/>
+  <path class="ar" d="M965 635 H1055 V371 H1145"/>
+  <path class="ag" d="M1310 676 V805 H45 V371 H125"/>
+  <rect x="650" y="779" width="300" height="52" rx="15" fill="#fbfaf5" stroke="#d89726" stroke-width="1.7"/>
+  <text x="800" y="812" text-anchor="middle" font-family="Segoe UI,Arial" font-size="20" font-weight="700" fill="#b67919">Traceable Feedback Loop</text>
+</svg>
