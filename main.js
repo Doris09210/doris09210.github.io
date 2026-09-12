@@ -2,6 +2,8 @@
 const langButton = document.querySelector('.lang-toggle');
 const overlay = document.getElementById('case-overlay');
 const modalContent = document.getElementById('modal-content');
+const caseModal = overlay?.querySelector('.case-modal');
+const modalCursorLight = caseModal?.querySelector('.modal-cursor-light');
 const atlasStage = document.getElementById('atlas-stage');
 const atlasCanvas = document.getElementById('atlas-canvas');
 const atlasReadout = document.getElementById('atlas-readout');
@@ -176,7 +178,7 @@ const reports = {
         ['assets/v2/leadership/results.webp', copy('Delivered screens, visual assets, and project outcomes.', '交付界面、视觉资产与项目成果。')]
       ]},
       { type: 'section', index: 'ORIGINAL SCREEN ARCHIVE', title: copy('Ten original screens document the breadth of the large-screen system.', '十张原始界面记录了大屏系统的完整覆盖范围。'), text: copy('The two boards above carry the main narrative. The complete set below remains available as a secondary visual archive, so the case stays readable without hiding the breadth of the design work.', '上方两张总览图承担主要叙事；下方完整界面作为次级视觉档案，既保持案例可读性，也不隐藏设计工作的覆盖范围。') },
-      { type: 'strip', figures: [
+      { type: 'strip', presentation: 'folder', label: copy('Leadership cockpit screen archive', '领导驾驶舱界面档案'), figures: [
         ['assets/v4/leadership-ui/screen-1.png', copy('Original leadership cockpit screen 01.', '领导驾驶舱原始界面 01。')],
         ['assets/v4/leadership-ui/screen-2.png', copy('Original leadership cockpit screen 02.', '领导驾驶舱原始界面 02。')],
         ['assets/v4/leadership-ui/screen-3.png', copy('Original leadership cockpit screen 03.', '领导驾驶舱原始界面 03。')],
@@ -228,13 +230,13 @@ const reports = {
     blocks: [
       { type: 'section', index: 'PUBLIC SCOPE', title: copy('Organizing complex tasks into a coherent system.', '将复杂任务组织为连贯的系统。'), text: copy('I contributed to system architecture, task-flow mapping, interaction logic, visual design, and interface delivery across the complete workflow. The examples below are the public materials supplied for this portfolio. Sensitive operational content remains omitted.', '我参与了完整流程的系统架构、任务流梳理、交互逻辑、视觉设计与界面交付。下方仅使用已为本作品集提供的公开材料，敏感业务内容仍予以隐去。') },
       { type: 'section', index: 'PUBLIC INTERFACE EXAMPLES', title: copy('The public screens show how files, experimental materials, and participant tasks were organized.', '可公开界面展示了文件、实验材料与参与者任务的组织方式。'), text: copy('These examples demonstrate information architecture and interaction states without disclosing restricted project content.', '这些示例用于说明信息架构与交互状态，不披露受限项目内容。') },
-      { type: 'gallery', figures: [
+      { type: 'gallery', presentation: 'folder', label: copy('Public interface files', '可公开界面文件'), figures: [
         ['assets/v4/platform/interface-1.png', copy('Public example: file and material management.', '可公开示例：文件与材料管理。')],
         ['assets/v4/platform/interface-2.png', copy('Public example: experimental-material configuration.', '可公开示例：实验材料配置。')],
         ['assets/v4/platform/interface-3.png', copy('Public example: participant selection and task setup.', '可公开示例：参与者选择与任务设置。')]
       ]},
       { type: 'section', index: 'COMPONENT SYSTEM', title: copy('Reusable components kept the long workflow consistent.', '可复用组件保证了长流程的一致性。'), text: copy('The component archive records controls, states, tables, progress patterns, and review modules used across the system.', '组件档案记录了系统中的控件、状态、表格、进度模式与审查模块。') },
-      { type: 'gallery', figures: [
+      { type: 'gallery', presentation: 'folder', label: copy('Component archive', '组件档案'), figures: [
         ['assets/v4/platform/component-1.png', copy('Public component archive 01.', '可公开组件档案 01。')],
         ['assets/v4/platform/component-2.png', copy('Public component archive 02.', '可公开组件档案 02。')],
         ['assets/v4/platform/component-3.png', copy('Public component archive 03.', '可公开组件档案 03。')]
@@ -349,12 +351,31 @@ langButton.addEventListener('click', () => {
   updateLanguage();
 });
 
-function reportBlockHtml(block) {
+function reportBlockHtml(block, blockIndex) {
   if (block.type === 'section') {
     return `<section class="report-section"><p class="report-index">${block.index}</p><div class="report-body"><h3>${tr(block.title)}</h3><p>${tr(block.text)}</p></div></section>`;
   }
   if (block.type === 'figure') {
     return `<figure class="report-figure"><img src="${block.src}" alt="${block.alt}" loading="lazy" decoding="async"><figcaption><span>${tr(block.caption)}</span></figcaption></figure>`;
+  }
+  if ((block.type === 'gallery' || block.type === 'strip') && block.presentation === 'folder') {
+      const folderId = `report-folder-${currentCase}-${blockIndex}`;
+      const fileCount = block.figures.length;
+      const fileLabel = currentLang === 'en' ? `${fileCount} files` : `${fileCount} 个文件`;
+      const openLabel = currentLang === 'en' ? 'View files' : '查看文件';
+      const previewIndexes = fileCount > 3 ? [0, Math.floor(fileCount / 2), fileCount - 1] : block.figures.map((_, index) => index);
+      return `<section class="report-folder" data-report-folder>
+        <button class="report-folder-trigger" type="button" aria-expanded="false" aria-controls="${folderId}" data-folder-trigger>
+          <span class="report-folder-papers" aria-hidden="true">${previewIndexes.map(index => `<i style="--preview-index:${index}"><img src="${block.figures[index][0]}" alt="" loading="lazy" decoding="async"></i>`).join('')}</span>
+          <span class="report-folder-cover">
+            <span><strong>${tr(block.label)}</strong><small>${fileLabel}</small></span>
+            <em>${openLabel}<b>+</b></em>
+          </span>
+        </button>
+        <div class="report-folder-files" id="${folderId}" aria-hidden="true">
+          ${block.figures.map((figure, index) => `<figure style="--file-index:${index}"><span>${String(index + 1).padStart(2, '0')}</span><img src="${figure[0]}" alt="${tr(figure[1])}" loading="lazy" decoding="async"><figcaption>${tr(figure[1])}</figcaption></figure>`).join('')}
+        </div>
+      </section>`;
   }
   if (block.type === 'gallery') {
     return `<div class="report-gallery">${block.figures.map((figure, index) => `<figure class="${block.figures.length % 2 === 1 && index === 0 ? 'wide' : ''}"><img src="${figure[0]}" alt="${tr(figure[1])}" loading="lazy" decoding="async"><figcaption>${tr(figure[1])}</figcaption></figure>`).join('')}</div>`;
@@ -402,10 +423,36 @@ function closeReport() {
   overlay.classList.remove('is-open');
   overlay.setAttribute('aria-hidden', 'true');
   body.classList.remove('modal-open');
+  caseModal?.classList.remove('is-pointer-active');
   currentCase = null;
   if (location.hash.startsWith('#case-')) history.replaceState(null, '', '#work');
   if (lastFocused) lastFocused.focus();
   setBotState('curious', 900);
+}
+
+modalContent.addEventListener('click', (event) => {
+  const trigger = event.target.closest('[data-folder-trigger]');
+  if (!trigger) return;
+  const folder = trigger.closest('[data-report-folder]');
+  const isOpen = folder.classList.toggle('is-open');
+  trigger.setAttribute('aria-expanded', String(isOpen));
+  const files = folder.querySelector('.report-folder-files');
+  if (files) files.setAttribute('aria-hidden', String(!isOpen));
+  const action = trigger.querySelector('em');
+  if (action) action.childNodes[0].textContent = currentLang === 'en'
+    ? (isOpen ? 'Hide files' : 'View files')
+    : (isOpen ? '收起文件' : '查看文件');
+});
+
+if (caseModal && modalCursorLight) {
+  caseModal.addEventListener('pointermove', (event) => {
+    if (event.pointerType === 'touch') return;
+    const bounds = caseModal.getBoundingClientRect();
+    caseModal.style.setProperty('--modal-pointer-x', `${event.clientX - bounds.left + caseModal.scrollLeft}px`);
+    caseModal.style.setProperty('--modal-pointer-y', `${event.clientY - bounds.top + caseModal.scrollTop}px`);
+    caseModal.classList.add('is-pointer-active');
+  }, { passive: true });
+  caseModal.addEventListener('pointerleave', () => caseModal.classList.remove('is-pointer-active'));
 }
 
 document.querySelectorAll('[data-case]').forEach((trigger) => {
@@ -557,11 +604,66 @@ if ('IntersectionObserver' in window && observedSections.length) {
     if (!visible) return;
     currentBotSection = visible.target.id;
     updateBotText();
-    document.querySelectorAll('.site-header nav a').forEach((link) => {
-      link.classList.toggle('is-active', link.getAttribute('href') === `#${currentBotSection}`);
+    document.querySelectorAll('.site-header nav a, .pro-index a').forEach((link) => {
+      const isActive = link.getAttribute('href') === `#${currentBotSection}`;
+      link.classList.toggle('is-active', isActive);
+      if (isActive) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
     });
   }, { rootMargin: '-25% 0px -58%', threshold: [0, .2, .45] });
   observedSections.forEach((section) => sectionObserver.observe(section));
+}
+
+// Pro presentation interactions: progressive disclosure, pointer-aware surfaces,
+// and a lightweight step-player treatment. These do not change site content.
+const proReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const proRevealTargets = [...document.querySelectorAll([
+  '.section-heading',
+  '.story-layout',
+  '.case-card',
+  '.research-archive',
+  '.profile-block',
+  '.contact-section > *'
+].join(','))];
+
+if (!proReducedMotion && 'IntersectionObserver' in window) {
+  proRevealTargets.forEach((target, index) => {
+    target.classList.add('pro-reveal');
+    target.style.transitionDelay = `${Math.min(index % 3, 2) * 70}ms`;
+  });
+  const proRevealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8%', threshold: .08 });
+  proRevealTargets.forEach((target) => proRevealObserver.observe(target));
+} else {
+  proRevealTargets.forEach((target) => target.classList.add('is-visible'));
+}
+
+document.querySelectorAll('.case-card, .profile-block, .story-figure').forEach((surface) => {
+  surface.addEventListener('pointermove', (event) => {
+    if (event.pointerType === 'touch') return;
+    const bounds = surface.getBoundingClientRect();
+    surface.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
+    surface.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`);
+    surface.classList.add('is-pointer-active');
+  }, { passive: true });
+  surface.addEventListener('pointerleave', () => surface.classList.remove('is-pointer-active'));
+});
+
+const researchSteps = [...document.querySelectorAll('.story-steps button')];
+if (researchSteps.length) {
+  researchSteps[0].classList.add('is-current');
+  const setCurrentResearchStep = (step) => {
+    researchSteps.forEach((item) => item.classList.toggle('is-current', item === step));
+  };
+  researchSteps.forEach((step) => {
+    step.addEventListener('pointerenter', () => setCurrentResearchStep(step));
+    step.addEventListener('focus', () => setCurrentResearchStep(step));
+  });
 }
 
 function updateScrollProgress() {
