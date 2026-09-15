@@ -6,8 +6,8 @@
 
 | Skill | 适合做什么 | 核心方法 |
 | --- | --- | --- |
-| [`structured-reporting`](./structured-reporting/) | 梳理周报、结项汇报、向上沟通、评审材料和工作总结，也可检查现有文档的结构是否清楚 | 结论先行、SCQA、MECE、观点式标题、数字与范围纪律 |
-| [`deck-craft`](./deck-craft/) | 制作适合现场讲解的 PPT、网页演示和评审页面 | 一页一个意思、页面只留图和关键词、正确选择图表、解释放进演讲者备注 |
+| [`structured-reporting`](./structured-reporting/SKILL.md) | 梳理周报、结项汇报、向上沟通、评审材料和工作总结，也可检查现有文档的结构是否清楚 | 结论先行、SCQA、MECE、观点式标题、数字与范围纪律 |
+| [`deck-craft`](./deck-craft/SKILL.md) | 制作适合现场讲解的 PPT、网页演示和评审页面 | 一页一个意思、页面只留图和关键词、正确选择图表、解释放进演讲者备注 |
 
 ## 两个 skill 的分工
 
