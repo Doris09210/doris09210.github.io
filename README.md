@@ -18,4 +18,4 @@ Open `index.html` to preview locally.
 
 ## Useful skills
 
-Reusable AI skills that I have found helpful are collected in [`skill/`](./skill/). The collection currently includes guidance for structuring reports and designing presentation pages.
+Reusable AI skills that I have found helpful are collected in [`skill/`](./skill/README.md). The collection currently includes guidance for structuring reports and designing presentation pages.
