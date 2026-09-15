@@ -15,3 +15,7 @@ Creative PhD application portfolio prototype based on the existing academic webs
 - Original Chinese thesis figures remain archived under `assets/v2/to-translate-cn`; the live site uses the English set under `assets/v3/english-figures`.
 
 Open `index.html` to preview locally.
+
+## Useful skills
+
+Reusable AI skills that I have found helpful are collected in [`skill/`](./skill/). The collection currently includes guidance for structuring reports and designing presentation pages.
