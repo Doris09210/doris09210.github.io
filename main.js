@@ -161,7 +161,8 @@ const reports = {
     facts: [
       ['ROLE', copy('Interface prototypes / Experiment / Design translation', '界面原型 / 实验 / 设计转化')],
       ['DESIGN', copy('3 layouts × 3 chart counts × 5 border styles', '3 种布局 × 3 种图表数量 × 5 种边框样式')],
-      ['OUTPUT', copy('HCII 2025 first-author paper', 'HCII 2025 第一作者论文')]
+      ['OUTPUT', copy('HCII 2025 first-author paper', 'HCII 2025 第一作者论文')],
+      ['DOI', copy('10.1007/978-3-031-93835-1_3', '10.1007/978-3-031-93835-1_3'), 'https://doi.org/10.1007/978-3-031-93835-1_3']
     ],
     blocks: [
       { type: 'section', index: 'THE QUESTION', title: copy('More information does not automatically produce faster decisions.', '更多信息并不必然带来更快的决策。'), text: copy('This project examined how chart quantity, border style, and page layout influence cognitive load and visual search in leadership-cockpit interfaces. I contributed interface prototypes, experimental design, and the translation of findings into visualization and layout guidance.', '项目考察图表数量、边框样式和页面布局如何影响领导驾驶舱中的认知负荷与视觉搜索。我参与界面原型、实验设计，以及将研究发现转化为可视化和布局指导。') },
@@ -201,7 +202,7 @@ const reports = {
     facts: [
       ['JOURNAL', copy('International Journal of Industrial Ergonomics, 114, 103955', 'International Journal of Industrial Ergonomics, 114, 103955')],
       ['ROLE', copy('First author', '第一作者')],
-      ['DOI', copy('10.1016/j.ergon.2026.103955', '10.1016/j.ergon.2026.103955')],
+      ['DOI', copy('10.1016/j.ergon.2026.103955', '10.1016/j.ergon.2026.103955'), 'https://doi.org/10.1016/j.ergon.2026.103955'],
       ['EVIDENCE', copy('Behavior / Eye tracking / NASA-TLX', '行为 / 眼动 / NASA-TLX')]
     ],
     blocks: [
@@ -398,7 +399,12 @@ function renderReport(caseName) {
   modalContent.innerHTML = `
     <header class="report-hero">
       <div><p class="report-meta">${report.meta}</p><h2 id="modal-title">${tr(report.title)}</h2><p class="report-deck">${tr(report.deck)}</p></div>
-      <dl>${report.facts.map(fact => `<div><dt>${fact[0]}</dt><dd>${tr(fact[1])}</dd></div>`).join('')}</dl>
+      <dl>${report.facts.map(([label, value, href]) => {
+        const content = href
+          ? `<a class="report-fact-link" href="${href}" target="_blank" rel="noopener noreferrer"><span>${tr(value)}</span><span class="report-fact-link-icon" aria-hidden="true">↗</span></a>`
+          : tr(value);
+        return `<div><dt>${label}</dt><dd>${content}</dd></div>`;
+      }).join('')}</dl>
     </header>
     ${report.blocks.map(reportBlockHtml).join('')}
   `;

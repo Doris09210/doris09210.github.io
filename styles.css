@@ -374,6 +374,29 @@ img { display: block; max-width: 100%; }
 .report-hero dl div { padding-top: 10px; border-top: 1px solid var(--line); }
 .report-hero dt { font-size: 9.5px; font-weight: 850; letter-spacing: .1em; }
 .report-hero dd { margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.report-fact-link {
+  width: fit-content;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .45em;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-underline-offset: .24em;
+  transition: color .18s ease, text-decoration-color .18s ease;
+}
+.report-fact-link:hover {
+  color: var(--ink);
+  text-decoration-color: currentColor;
+}
+.report-fact-link-icon {
+  display: inline-block;
+  font-size: .95em;
+  text-decoration: none;
+  transition: transform .18s ease;
+}
+.report-fact-link:hover .report-fact-link-icon { transform: translate(2px, -2px); }
 .report-section { padding: 68px 5vw; display: grid; grid-template-columns: .35fr 1fr; gap: 7vw; border-bottom: 1px solid var(--line); }
 .report-index { margin: 0; color: var(--accent); font-size: 11px; font-weight: 850; letter-spacing: .06em; }
 .report-section h3 { margin: 0; max-width: 930px; font-size: clamp(29px, 3.5vw, 52px); line-height: 1; letter-spacing: -.035em; }
