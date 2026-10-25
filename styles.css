@@ -336,6 +336,8 @@ img { display: block; max-width: 100%; }
 .personal-project-link > b { position: absolute; top: 22px; right: 22px; color: var(--accent); font-size: 18px; }
 .personal-project-link:hover, .personal-project-link:focus-visible { transform: translateY(-2px); border-color: var(--accent); background: var(--accent-soft); }
 .personal-project-link:active { transform: translateY(0); }
+.personal-project-link.is-disabled { cursor: not-allowed; opacity: .52; filter: grayscale(1); background: color-mix(in srgb, var(--surface) 62%, transparent); }
+.personal-project-link.is-disabled:hover { transform: none; border-color: var(--line); background: color-mix(in srgb, var(--surface) 62%, transparent); }
 .profile-cv { margin: 34px auto 0; width: fit-content; }
 
 .contact-section { min-height: 52dvh; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
