@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A self-initiated physical-key video terminal designed and built by Yao Du for older adults.">
+  <meta name="theme-color" content="#f3efe6">
+  <script defer src="analytics.js?v=1"></script>
+  <meta name="analytics-website-id" content="f46c14ad-83ae-48ab-83a8-8568a922c423">
+  <title>Physical-key video terminal for older adults | Yao Du</title>
+  <link rel="stylesheet" href="styles.css?v=pro8">
+  <link rel="stylesheet" href="elderly-video-terminal.css?v=1">
+</head>
+<body class="project-page">
+  <a class="skip-link" href="#project-main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header project-header">
+    <a class="wordmark" href="index.html#profile" aria-label="Return to Yao Du portfolio">
+      <span>YAO DU</span>
+      <small data-en="PERSONAL PROJECT" data-zh="个人项目">PERSONAL PROJECT</small>
+    </a>
+    <nav aria-label="Project navigation">
+      <a href="#context"><span data-en="Context" data-zh="背景">Context</span></a>
+      <a href="#process"><span data-en="Process" data-zh="过程">Process</span></a>
+      <a href="#prototype"><span data-en="Prototype" data-zh="成品">Prototype</span></a>
+    </nav>
+    <div class="header-actions">
+      <a class="project-back" href="index.html#profile"><span data-en="Back to portfolio" data-zh="返回主页">Back to portfolio</span> ↙</a>
+      <button class="lang-toggle" type="button" aria-label="Switch language"><b>EN</b><span>/</span><em>中</em></button>
+    </div>
+  </header>
+
+  <main id="project-main">
+    <section class="project-hero" id="top">
+      <div class="project-hero-copy">
+        <p class="project-kicker"><span data-en="SELF-INITIATED PRODUCT · 2026" data-zh="个人自发产品项目 · 2026">SELF-INITIATED PRODUCT · 2026</span></p>
+        <h1 data-en="A video terminal my grandparents can operate with physical keys." data-zh="一台让外公外婆用实体按键操作的视频通话终端。">A video terminal my grandparents can operate with physical keys.</h1>
+        <p class="project-deck" data-en="I turned a family need into a working prototype: a large-screen Android tablet paired with a custom physical controller for one-press video calls, answering, entertainment, and voice-assistant access." data-zh="我把一个真实的家庭需求做成了可运行的原型：将大屏 Android 平板与自定义实体控制器结合，实现一键视频拨打、接听、娱乐与智能助手访问。">I turned a family need into a working prototype: a large-screen Android tablet paired with a custom physical controller for one-press video calls, answering, entertainment, and voice-assistant access.</p>
+        <dl class="project-meta">
+          <div><dt data-en="ROLE" data-zh="角色">ROLE</dt><dd data-en="Product, interaction, software, and enclosure design" data-zh="产品、交互、软件与结构设计">Product, interaction, software, and enclosure design</dd></div>
+          <div><dt data-en="BUILD" data-zh="实现">BUILD</dt><dd data-en="Android · AccessibilityService · Key Mapper · SolidWorks · 3D printing" data-zh="Android · 无障碍服务 · Key Mapper · SolidWorks · 3D 打印">Android · AccessibilityService · Key Mapper · SolidWorks · 3D printing</dd></div>
+          <div><dt data-en="STATUS" data-zh="状态">STATUS</dt><dd data-en="Working family prototype" data-zh="家庭场景可运行原型">Working family prototype</dd></div>
+        </dl>
+      </div>
+
+      <div class="project-hero-media">
+        <figure class="hero-product">
+          <img src="assets/elderly-terminal/finished-controller.webp" alt="Finished physical controller with illustrated large buttons" fetchpriority="high">
+          <figcaption><span data-en="The finished controller uses familiar pictograms instead of text-heavy labels." data-zh="成品控制器用熟悉的图形代替文字密集的标签。">The finished controller uses familiar pictograms instead of text-heavy labels.</span></figcaption>
+        </figure>
+        <div class="key-motif" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section class="project-summary" aria-label="Project summary">
+      <div><span>01</span><b data-en="Need" data-zh="需求">Need</b><p data-en="My grandparents live independently and find touch-screen video calling difficult." data-zh="外公外婆独立居住，触屏视频通话对他们来说操作复杂。">My grandparents live independently and find touch-screen video calling difficult.</p></div>
+      <div><span>02</span><b data-en="Response" data-zh="方案">Response</b><p data-en="Map recurring tasks to fixed physical keys on a large-screen device." data-zh="把高频任务映射到大屏设备旁的固定实体按键。">Map recurring tasks to fixed physical keys on a large-screen device.</p></div>
+      <div><span>03</span><b data-en="Outcome" data-zh="结果">Outcome</b><p data-en="A working prototype covering calls, answering, Douyin, Doubao, brightness, and volume." data-zh="完成可用原型，支持拨打与接听、抖音、豆包、亮度和音量控制。">A working prototype covering calls, answering, Douyin, Doubao, brightness, and volume.</p></div>
+    </section>
+
+    <section class="project-section context-section" id="context">
+      <header class="project-section-head">
+        <p>01 / <span data-en="CONTEXT" data-zh="项目背景">CONTEXT</span></p>
+        <h2 data-en="The barrier was not video calling itself. It was reaching the right action." data-zh="困难并不是视频通话本身，而是如何到达正确的操作。">The barrier was not video calling itself. It was reaching the right action.</h2>
+      </header>
+      <div class="context-grid">
+        <div class="context-story">
+          <p data-en="I wanted to see my grandparents more often, and I wanted them to be able to see me without waiting for another family member to operate a phone. Existing smart displays suggested the right direction, but their smaller screens and touch-first interaction still asked too much of users who were more comfortable with physical controls." data-zh="我希望能更常看到外公外婆，也希望他们不必等家人帮忙操作手机，就能主动和我视频。市面上的智能屏给了我方向，但屏幕尺寸和以触控为主的交互，仍然让习惯实体按键的老人承担了较高的操作成本。">I wanted to see my grandparents more often, and I wanted them to be able to see me without waiting for another family member to operate a phone. Existing smart displays suggested the right direction, but their smaller screens and touch-first interaction still asked too much of users who were more comfortable with physical controls.</p>
+          <blockquote>
+            <span data-en="Design question" data-zh="设计问题">Design question</span>
+            <p data-en="How might one physical press replace a sequence of small targets, changing screens, and uncertain call states?" data-zh="如何让一次实体按压，替代一连串小目标、页面切换和不确定的通话状态？">How might one physical press replace a sequence of small targets, changing screens, and uncertain call states?</p>
+          </blockquote>
+        </div>
+        <figure class="context-image">
+          <img src="assets/elderly-terminal/early-reference.webp" alt="Early hardware reference used during the project">
+          <figcaption><span data-en="I began with existing hardware, then redesigned the interaction and enclosure around the household setting." data-zh="我从现有硬件出发，再围绕家庭使用场景重新设计交互和外壳。">I began with existing hardware, then redesigned the interaction and enclosure around the household setting.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section principles-section">
+      <header class="project-section-head compact">
+        <p>02 / <span data-en="DESIGN RESPONSE" data-zh="设计回应">DESIGN RESPONSE</span></p>
+        <h2 data-en="Make the recurring action visible, fixed, and recoverable." data-zh="让高频操作可见、固定，并且能够恢复。">Make the recurring action visible, fixed, and recoverable.</h2>
+      </header>
+      <div class="principle-list">
+        <article><span>01</span><div><h3 data-en="Large display" data-zh="大屏显示">Large display</h3><p data-en="Keep faces and call states legible from a comfortable viewing distance." data-zh="让人脸和通话状态在舒适观看距离下仍然清晰。">Keep faces and call states legible from a comfortable viewing distance.</p></div></article>
+        <article><span>02</span><div><h3 data-en="Fixed physical mapping" data-zh="固定实体映射">Fixed physical mapping</h3><p data-en="Give each frequent task a stable location, distinct icon, and tactile press." data-zh="为每个高频任务设置稳定位置、清晰图标和可感知的按压反馈。">Give each frequent task a stable location, distinct icon, and tactile press.</p></div></article>
+        <article><span>03</span><div><h3 data-en="State-aware automation" data-zh="状态感知自动化">State-aware automation</h3><p data-en="Let software handle app launching, waiting, screen changes, and recovery steps." data-zh="由软件处理应用启动、等待、页面切换和异常恢复。">Let software handle app launching, waiting, screen changes, and recovery steps.</p></div></article>
+      </div>
+
+      <div class="system-map" aria-label="System architecture">
+        <div><b data-en="PHYSICAL KEY" data-zh="实体按键">PHYSICAL KEY</b><small data-en="One familiar action" data-zh="一个熟悉动作">One familiar action</small></div>
+        <span>→</span>
+        <div><b>KEY MAPPER</b><small data-en="Wake, unlock, broadcast" data-zh="唤醒、解锁、发送指令">Wake, unlock, broadcast</small></div>
+        <span>→</span>
+        <div><b>ACCESSIBILITY SERVICE</b><small data-en="Read state and execute flow" data-zh="识别状态并执行流程">Read state and execute flow</small></div>
+        <span>→</span>
+        <div><b data-en="TARGET APP" data-zh="目标应用">TARGET APP</b><small data-en="WeChat · Douyin · Doubao" data-zh="微信 · 抖音 · 豆包">WeChat · Douyin · Doubao</small></div>
+      </div>
+    </section>
+
+    <section class="project-section process-section" id="process">
+      <header class="project-section-head">
+        <p>03 / <span data-en="BUILD PROCESS" data-zh="制作过程">BUILD PROCESS</span></p>
+        <h2 data-en="From a short PRD to software, hardware, and a printed enclosure." data-zh="从简短 PRD，到软件、硬件与打印外壳。">From a short PRD to software, hardware, and a printed enclosure.</h2>
+      </header>
+
+      <article class="process-row">
+        <div class="process-copy"><span>01</span><h3 data-en="Frame the task before building" data-zh="先定义任务，再开始制作">Frame the task before building</h3><p data-en="I wrote a concise PRD covering users, call states, button mappings, system architecture, acceptance criteria, known risks, and product boundaries. The core requirement was simple: recurrent tasks should complete from a single, predictable press." data-zh="我先写了一份简短 PRD，梳理用户、通话状态、按键映射、系统架构、验收标准、已知风险和产品边界。核心要求很简单：高频任务应当通过一次可预测的按压完成。">I wrote a concise PRD covering users, call states, button mappings, system architecture, acceptance criteria, known risks, and product boundaries. The core requirement was simple: recurrent tasks should complete from a single, predictable press.</p></div>
+        <figure><img src="assets/elderly-terminal/prototype-front.webp" alt="Front view of the early hardware prototype" loading="lazy"><figcaption data-en="Early integrated prototype" data-zh="早期整合原型">Early integrated prototype</figcaption></figure>
+      </article>
+
+      <article class="process-row reverse">
+        <div class="process-copy"><span>02</span><h3 data-en="Turn a generic keypad into a family interface" data-zh="把通用键盘变成家庭界面">Turn a generic keypad into a family interface</h3><p data-en="I started with a programmable nine-key controller. Large illustrated labels replaced abstract key codes: four family shortcuts, directional controls, entertainment, answer, and home/end-call. Two rotary controls support volume and brightness." data-zh="我从一个可编程九键控制器开始。大尺寸图形标签替代抽象键码：四个家人快捷入口、上下切换、娱乐、接听和回主页/挂断；两个旋钮用于音量与亮度。">I started with a programmable nine-key controller. Large illustrated labels replaced abstract key codes: four family shortcuts, directional controls, entertainment, answer, and home/end-call. Two rotary controls support volume and brightness.</p></div>
+        <div class="image-pair">
+          <figure><img src="assets/elderly-terminal/blank-controller.webp" alt="Unlabeled programmable keypad before customization" loading="lazy"><figcaption data-en="Before customization" data-zh="改造前">Before customization</figcaption></figure>
+          <figure><img src="assets/elderly-terminal/button-icon-design.webp" alt="Illustrated button-label design sheet" loading="lazy"><figcaption data-en="Pictogram and label exploration" data-zh="图形与标签设计">Pictogram and label exploration</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="process-row">
+        <div class="process-copy"><span>03</span><h3 data-en="Encode the interaction logic" data-zh="编写交互逻辑">Encode the interaction logic</h3><p data-en="An Android AccessibilityService listens for mapped actions, checks the active app and call state, and then finds accessible UI nodes or uses a coordinate fallback. The prototype covers one-press contact calls, incoming-call answer or reject, end call, Douyin navigation, Doubao video, screen wake, brightness, and volume." data-zh="Android 无障碍服务接收映射指令，判断当前应用和通话状态，再通过无障碍节点查找或坐标兜底完成操作。原型覆盖一键联系家人、来电接听或拒接、挂断、抖音切换、豆包视频、屏幕唤醒、亮度与音量控制。">An Android AccessibilityService listens for mapped actions, checks the active app and call state, and then finds accessible UI nodes or uses a coordinate fallback. The prototype covers one-press contact calls, incoming-call answer or reject, end call, Douyin navigation, Doubao video, screen wake, brightness, and volume.</p></div>
+        <div class="logic-panel">
+          <span>PRESS</span><b>F1</b><i>→</i><span>HOME</span><i>→</i><span data-en="CONTACT" data-zh="联系人">CONTACT</span><i>→</i><span data-en="VIDEO CALL" data-zh="视频通话">VIDEO CALL</span>
+          <small data-en="The visible action stays simple; the software absorbs the sequence." data-zh="用户看到的动作保持简单，复杂步骤由软件承担。">The visible action stays simple; the software absorbs the sequence.</small>
+        </div>
+      </article>
+
+      <article class="process-row reverse">
+        <div class="process-copy"><span>04</span><h3 data-en="Model, print, assemble, and refine" data-zh="建模、打印、装配与优化">Model, print, assemble, and refine</h3><p data-en="I modeled a combined base for the tablet stand and controller, then 3D-printed the enclosure. Cables and electronic parts sit inside the protective shell so the everyday setup presents one screen and one control surface rather than exposed components." data-zh="我为平板支架和控制器建模了一体化底座，并通过 3D 打印制作外壳。线缆和电子元件收纳在保护壳内部，使日常使用时只面对一块屏幕和一个控制面板。">I modeled a combined base for the tablet stand and controller, then 3D-printed the enclosure. Cables and electronic parts sit inside the protective shell so the everyday setup presents one screen and one control surface rather than exposed components.</p></div>
+        <div class="build-gallery">
+          <figure><img src="assets/elderly-terminal/cad-assembly.webp" alt="SolidWorks assembly model for the terminal" loading="lazy"><figcaption data-en="Assembly model" data-zh="装配模型">Assembly model</figcaption></figure>
+          <figure><img src="assets/elderly-terminal/printing-shell.webp" alt="3D printing the enclosure" loading="lazy"><figcaption data-en="3D-printed enclosure" data-zh="3D 打印外壳">3D-printed enclosure</figcaption></figure>
+          <figure><img src="assets/elderly-terminal/stand-prototype.webp" alt="Physical stand and internal cable routing" loading="lazy"><figcaption data-en="Stand and cable routing" data-zh="支架与内部走线">Stand and cable routing</figcaption></figure>
+        </div>
+      </article>
+    </section>
+
+    <section class="project-section prototype-section" id="prototype">
+      <header class="project-section-head">
+        <p>04 / <span data-en="WORKING PROTOTYPE" data-zh="可运行原型">WORKING PROTOTYPE</span></p>
+        <h2 data-en="A single control surface for calls, entertainment, and assistance." data-zh="用一块控制面板完成通话、娱乐与智能助手操作。">A single control surface for calls, entertainment, and assistance.</h2>
+      </header>
+
+      <div class="prototype-layout">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/elderly-terminal/demo-poster.jpg">
+            <source src="assets/elderly-terminal/demo-privacy-safe.mp4" type="video/mp4">
+          </video>
+          <p data-en="66-second functional demonstration. Faces, contact details, and personal shortcuts have been blurred; background noise has been reduced." data-zh="66 秒功能演示。视频已对人脸、联系人信息和个人快捷入口做隐私处理，并降低环境杂音。">66-second functional demonstration. Faces, contact details, and personal shortcuts have been blurred; background noise has been reduced.</p>
+        </div>
+
+        <div class="function-list">
+          <article><b>F1 / F2 / F4 / F5</b><p data-en="Call four familiar contacts" data-zh="一键拨打四位常用联系人">Call four familiar contacts</p></article>
+          <article><b>F8</b><p data-en="Answer an incoming WeChat call" data-zh="接听微信视频来电">Answer an incoming WeChat call</p></article>
+          <article><b>ESC</b><p data-en="Reject or end a call, then return home" data-zh="拒接或挂断，并返回主页">Reject or end a call, then return home</p></article>
+          <article><b>F3 / F6 / F7</b><p data-en="Previous, next, and open Douyin" data-zh="抖音上一个、下一个与打开应用">Previous, next, and open Douyin</p></article>
+          <article><b>F15</b><p data-en="Open Doubao video interaction" data-zh="打开豆包视频互动">Open Doubao video interaction</p></article>
+          <article><b data-en="DIALS" data-zh="旋钮">DIALS</b><p data-en="Adjust volume and brightness" data-zh="调节音量与亮度">Adjust volume and brightness</p></article>
+        </div>
+      </div>
+
+      <div class="final-grid">
+        <figure><img src="assets/elderly-terminal/finished-controller.webp" alt="Completed customized physical controller" loading="lazy"><figcaption data-en="Finished physical interface" data-zh="完成后的实体交互面板">Finished physical interface</figcaption></figure>
+        <figure><img src="assets/elderly-terminal/prototype-side.webp" alt="Side view of the assembled terminal prototype" loading="lazy"><figcaption data-en="Integrated tablet stand and controller" data-zh="平板支架与控制器整合结构">Integrated tablet stand and controller</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="project-reflection">
+      <div>
+        <p class="project-kicker"><span data-en="WHAT THIS PROJECT SHOWS" data-zh="这个项目体现了什么">WHAT THIS PROJECT SHOWS</span></p>
+        <h2 data-en="A small deployment, but a complete path from observation to use." data-zh="使用范围不大，但完整走过了从观察到落地的路径。">A small deployment, but a complete path from observation to use.</h2>
+      </div>
+      <div>
+        <p data-en="This is a family prototype rather than a broadly validated product. Its value lies in the complete practice: noticing a specific accessibility problem, defining the system, designing the interaction, writing and testing the software, modeling the enclosure, fabricating it, and placing the result in the real setting that motivated it." data-zh="这是一个家庭场景原型，并非经过大规模验证的产品。它的价值在于完整实践：发现具体的适老化问题，定义系统，设计交互，编写与测试软件，完成结构建模与制作，并把成品真正放回最初产生需求的场景中。">This is a family prototype rather than a broadly validated product. Its value lies in the complete practice: noticing a specific accessibility problem, defining the system, designing the interaction, writing and testing the software, modeling the enclosure, fabricating it, and placing the result in the real setting that motivated it.</p>
+        <a class="button primary" href="index.html#profile"><span data-en="Return to portfolio" data-zh="返回个人网站">Return to portfolio</span><b>↙</b></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="project-footer"><span>YAO DU / 2026</span><a href="#top"><span data-en="Back to top" data-zh="返回顶部">Back to top</span> ↑</a></footer>
+  <script src="elderly-video-terminal.js?v=1"></script>
+</body>
+</html>
