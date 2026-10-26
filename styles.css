@@ -329,15 +329,10 @@ img { display: block; max-width: 100%; }
 .service-block .personal-note { margin-top: 25px; padding-top: 18px; display: grid; grid-template-columns: 105px 1fr; gap: 14px; border-top: 1px solid var(--line); }
 .personal-note b { color: var(--accent); font-size: 10px; }
 .personal-note span { font-size: 13px; }
-.personal-project-link { position: relative; margin-top: 18px; padding: 22px 54px 22px 20px; display: grid; gap: 7px; border: 1px solid var(--line); border-radius: 8px 22px 8px 22px; background: color-mix(in srgb, var(--surface) 78%, transparent); transition: transform .22s ease, border-color .22s ease, background .22s ease; }
-.personal-project-link > span { color: var(--accent); font-size: 9px; font-weight: 850; letter-spacing: .09em; }
-.personal-project-link strong { font-family: var(--display); font-size: clamp(20px, 2.1vw, 29px); font-weight: 600; line-height: 1.15; }
-.personal-project-link small { max-width: 610px; color: var(--muted); font-size: 12px; line-height: 1.6; }
-.personal-project-link > b { position: absolute; top: 22px; right: 22px; color: var(--accent); font-size: 18px; }
-.personal-project-link:hover, .personal-project-link:focus-visible { transform: translateY(-2px); border-color: var(--accent); background: var(--accent-soft); }
-.personal-project-link:active { transform: translateY(0); }
-.personal-project-link.is-disabled { cursor: not-allowed; opacity: .52; filter: grayscale(1); background: color-mix(in srgb, var(--surface) 62%, transparent); }
-.personal-project-link.is-disabled:hover { transform: none; border-color: var(--line); background: color-mix(in srgb, var(--surface) 62%, transparent); }
+.personal-project-chip { width: fit-content; margin-top: 18px; padding: 10px 13px; display: inline-flex; align-items: center; gap: 18px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: color-mix(in srgb, var(--accent) 6%, var(--surface)); font-size: 11px; font-weight: 760; transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease; }
+.personal-project-chip b { color: var(--accent); font-size: 13px; }
+.personal-project-chip:hover, .personal-project-chip:focus-visible { color: var(--button-ink); background: var(--accent); border-color: var(--accent); transform: translateY(-2px); outline: none; }
+.personal-project-chip:hover b, .personal-project-chip:focus-visible b { color: inherit; }
 .profile-cv { margin: 34px auto 0; width: fit-content; }
 
 .contact-section { min-height: 52dvh; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
